@@ -6,7 +6,7 @@ export default function TodoList() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    const fetchData = async() => {
+    const fetchData = async () => {
       const data = await fetchTodos();
       setTasks(data);
     };
