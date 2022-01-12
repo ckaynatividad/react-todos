@@ -26,7 +26,7 @@ function App() {
                 <TodoList />
                 <NavLink className="words" to="/add">Add new</NavLink>
                 <Footer />
-                <><button onClick={logoutUser}>Log out</button></>
+                <button onClick={logoutUser}>Log out</button>
               </>
             )}
             {!user && <Auth setUser={setUser} />}
