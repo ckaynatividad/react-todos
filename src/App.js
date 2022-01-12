@@ -21,11 +21,11 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <TodoList />
             {user && (
-              <p>Huwwo</p>
+              <><TodoList /><><p>Huwwo</p><button onClick={logoutUser}>Log out</button></></>
             )}
             {!user && <Auth setUser={setUser} />}
+            
           </Route>
           <Route exact path="/add">
             {user && (
@@ -36,10 +36,9 @@ function App() {
           </Route>
           <Route exact path="/:id/edit">
             {user && (
-              <p>Edit task</p>
+              <><p>Edit task</p><EditTodo /></>
             )}
             {!user && <Auth setUser={setUser} />}
-            <EditTodo />
           </Route>
           <Route exact path="/:id">
             {user && (

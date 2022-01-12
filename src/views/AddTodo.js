@@ -4,7 +4,7 @@ import TaskForm from '../components/TaskForm';
 import { createTodo } from '../services/todos';
 
 export default function AddTodo() {
-  const [task, setTask] = useState({});
+  const [task, setTask] = useState('');
   const history = useHistory();
 
   const handleSubmit = async (e) => {
@@ -16,13 +16,17 @@ export default function AddTodo() {
       alert('Task not created');
     }};
 
-  const setNew = (key, value) => {
+  const setBool = (key, value) => {
     task[key] = value;
     setTask({ ...task });
   };
+  const setNew = task => {
+    setTask(task);
+  };
+
   return (
     <div>
-      <TaskForm task={task} handleSubmit={handleSubmit} setNew={setNew} />
+      <TaskForm task={task} handleSubmit={handleSubmit} setNew={setNew} setBool={setBool} />
     </div>
   );
 }

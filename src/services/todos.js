@@ -1,17 +1,17 @@
 import { client, checkError } from './client';
 
-export async function createTodo(task) {
-  const resp = await client.from('todos').insert([{ task: task, user_id: client.auth.user().id }]);
+export async function createTodo(task_info) {
+  const resp = await client.from('todos').insert([{ task_info, user_id: client.auth.user().id }]);
   return checkError(resp);
 }
 
 export async function fetchTodos() {
-  const resp = await client.from('todos').select().order(`user_id: ${client.auth.user().id}`);
+  const resp = await client.from('todos').select('*');
   return checkError(resp);
 }
 
-export async function updateTodo({ id, task, is_complete }) {
-  const resp = await client.from('todos').update({ task, is_complete }).eq('id', id);
+export async function updateTodo({ id, task_info, is_complete }) {
+  const resp = await client.from('todos').update({ task_info, is_complete }).eq('id', id);
   return checkError(resp);
 }
 

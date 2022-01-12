@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import Task from '../components/Task';
 import { deleteTodo, fetchTodoId } from '../services/todos';
 
-export default function TaskView(props) {
+export default function TaskView() {
   const [task, setTask] = useState([]);
 
   const history = useHistory();
-
+ 
+  const params = useParams();
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchTodoId(props.match.params.id);
+      const data = await fetchTodoId(params.id);
       setTask(data[0]);
     };
     fetchData();
-  }, [props.match.params.id]);
+  }, [params.id]);
 
   const handleDelete = async (e) => {
     e.preventDefault();
