@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
+import Footer from '../components/Footer';
 import TaskForm2 from '../components/TaskForm2';
 import { deleteTodo, fetchTodoId, updateTodo } from '../services/todos';
 
@@ -19,7 +20,6 @@ export default function EditTodo() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(task);
     try { await updateTodo(task);
       alert('Task updated');
       history.push(`/`);
@@ -46,7 +46,8 @@ export default function EditTodo() {
   };
   return (
     <div>
-      <TaskForm2 task={task} handleSubmit={handleSubmit} handleDelete={handleDelete} setNew={setNew} setBool={setBool} />      
+      <TaskForm2 task={task} handleSubmit={handleSubmit} handleDelete={handleDelete} setNew={setNew} setBool={setBool} /> 
+      <Footer />    
     </div>
   );
 }

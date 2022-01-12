@@ -1,11 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './Tasks.css';
 
-export default function Tasks({ task_info, is_complete, id }, setNew) {
+export default function Tasks({ task_info, is_complete }) {
+  
   return (
-    <div>
-      <p>{task_info}</p>
-      <p>completed? {is_complete ? 'yes' : 'no'} </p>
-    </div>
+    <><div className="list">
+      <p>{task_info}</p> {is_complete 
+        ? 
+        <input 
+          checked 
+          placeholder="completed" 
+          type="checkbox"
+          readOnly 
+        />
+        : 
+        <input 
+          placeholder="completed" 
+          type="checkbox" 
+          readOnly
+        />}
+    </div></>
   );
 }

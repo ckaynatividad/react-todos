@@ -24,7 +24,7 @@ export default function Auth({ setUser }) {
   };
   return (
     <div className="complete"><h3>{type}</h3><AuthForm email={email} setEmail={setEmail} password={password} setPassword={setPassword} errorMsg={errorMsg} handleSubmit={handleSubmit} />
-      <button onClick={() => { setType('Sign Up'); } } className={classNames({ active: type === 'Sign Up' })} />
+      <button onClick={() => { setType('Sign Up'); } } className={classNames({ active: type === 'Sign Up' })}>Sign Up</button>
             
     </div>
   );

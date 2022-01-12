@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+import Footer from '../components/Footer';
 import TaskForm from '../components/TaskForm';
 import { createTodo } from '../services/todos';
 
@@ -25,8 +26,9 @@ export default function AddTodo() {
   };
 
   return (
-    <div>
+    <div className="addNew">
       <TaskForm task={task} handleSubmit={handleSubmit} setNew={setNew} setBool={setBool} />
+      <Footer />
     </div>
   );
 }

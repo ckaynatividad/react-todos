@@ -1,16 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default function TaskForm({ task, setNew, setBool, handleSubmit, handleDelete }) {
   return (
     <form>
-      <label>task name</label>
+      <label>Task </label>
       <input 
         placeholder="task" 
         type="text" 
         value={task.task_info} 
         onChange={(e) => {setNew(e.target.value); }} />
 
-      <label>completed?</label>
+      <label> Completed?</label>
       {task.is_complete 
         ? 
         <input 
@@ -24,8 +25,10 @@ export default function TaskForm({ task, setNew, setBool, handleSubmit, handleDe
           type="checkbox" 
           onChange={(e) => {setBool('is_complete', e.target.checked); }} />}
 
-      <button onClick={handleSubmit}>insert task</button>
-      <button onClick={handleDelete}>Delete Task</button>
+      <p><button onClick={handleSubmit}>Update</button>
+        <button onClick={handleDelete}>Delete</button>
+      </p>
+      <p><NavLink className="words" to="/">go back</NavLink> </p>
     </form>
   );
 }
