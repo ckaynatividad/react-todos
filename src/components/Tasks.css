@@ -1,0 +1,16 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px double rgba(70, 70, 70, 0.466);
+  background-color: rgb(232, 232, 228);
+  height: fit-content;
+  font-size: 10pt;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  line-height: 5px;
+  letter-spacing: 1px;
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 2px;
+}
