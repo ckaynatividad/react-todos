@@ -22,7 +22,8 @@ export default function TodoList() {
       </header>
       
       {tasks.map((task) => (
-        <Link key={task.id} to={`/${task.id}/edit`}><Tasks key={task.id} {...task} /></Link>
+        <Link key={task.id} to={`/${task.id}/edit`}>
+          <Tasks key={task.id} {...task} /></Link>
       ))}
     </div>
   );
